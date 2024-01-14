@@ -1,0 +1,25 @@
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/1146254344/
+
+
+Solution:
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int n = nums.length;
+        LinkedHashSet<Integer> h = new LinkedHashSet<>();
+        for(int x: nums)
+        {
+            h.add(x);
+        }
+        int x = h.size();
+        
+        int i=0;
+        for(int p:h)
+        {
+            nums[i]=p;
+            i++; 
+        }
+        return x;
+    }
+
+}

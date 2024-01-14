@@ -1,0 +1,42 @@
+https://leetcode.com/problems/reverse-words-in-a-string/description/
+
+
+Solution:
+
+
+class Solution {
+    public String reverseWords(String st) {
+        st=st.trim();
+        st = st.replaceAll("\\s{2,}", " ").trim();
+        char [] ar = st.toCharArray();
+        int s =0;
+        int l = 0;
+        // int cr=0;
+
+        for(int cr=0;cr<ar.length;cr++)
+        {
+            if(ar[cr]==' ')
+            {
+                l=cr-1;
+                reverse(ar,s,l);
+                s=cr+1;
+            }
+        }
+        reverse(ar,s,ar.length-1);
+        reverse(ar,0,ar.length-1);
+
+        return new String(ar);
+        
+    }
+    public static void reverse(char arr[],int s,int l)
+    {
+        while(s<l)
+        {
+            char a = arr[s];
+            arr[s]=arr[l];
+            arr[l]=a;
+            s++;
+            l--;
+        }
+    }
+}

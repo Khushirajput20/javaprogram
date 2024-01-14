@@ -1,0 +1,26 @@
+https://leetcode.com/problems/missing-number/submissions/1146256534/
+
+
+Solution:
+
+class Solution {
+    public int missingNumber(int[] nums) {
+        Arrays.sort(nums);
+        //chechk if 0 is missing or not
+        if(nums[0]!=0)
+        {
+             return 0;
+        }
+        int n = nums.length;
+        n=n;
+        // int l = nums[n];
+        int Osum = (n*(n+1))/2;
+        int asum =0;
+        for(int x : nums)
+        {
+            asum+=x;
+        }
+        //missing number will be 
+           return Osum-asum;
+    }
+}
